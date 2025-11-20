@@ -1,5 +1,7 @@
 import React from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code2, Terminal, Cpu } from 'lucide-react';
+import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaGitAlt, FaLinux } from 'react-icons/fa';
+import { SiC, SiArduino, SiGnubash, SiOctave } from 'react-icons/si';
 
 function App() {
   
@@ -24,6 +26,21 @@ function App() {
     }
   ];
 
+  const skills = [
+    { name: "React", icon: <FaReact /> },
+    { name: "Node.js", icon: <FaNodeJs /> },
+    { name: "Python", icon: <FaPython /> },
+    { name: "C / C++", icon: <SiC /> }, // Ícone do C
+    { name: "Arduino", icon: <SiArduino /> },
+    { name: "HTML5", icon: <FaHtml5 /> },
+    { name: "CSS3", icon: <FaCss3Alt /> },
+    { name: "Git", icon: <FaGitAlt /> },
+    { name: "Linux", icon: <FaLinux /> },
+    { name: "Bash", icon: <SiGnubash /> },
+    // Adicionei Octave pois vi no seu histórico que você usa
+    { name: "Octave", icon: <SiOctave /> }, 
+  ];
+  
   return (
     <div className="min-h-screen bg-[#0f0715] text-white font-sans selection:bg-purple-500 selection:text-white">
       
@@ -72,15 +89,22 @@ function App() {
       </section>
 
       {/* --- SKILLS SECTION --- */}
-      <section id="skills" className="scroll-mt-28 py-20 bg-white/5">
+      <section id="skills" className="scroll-mt-28 py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center"><span className="text-purple-400">Minhas</span> Habilidades</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <SkillCard icon={<Code2 />} title="Frontend" desc="React, Tailwind, HTML/CSS" />
-            <SkillCard icon={<Terminal />} title="Backend" desc="Node.js, Python, SQL" />
-            <SkillCard icon={<Cpu />} title="Engenharia" desc="C, Assembly, Hardware" />
-            <SkillCard icon={<ExternalLink />} title="Ferramentas" desc="Git, VS Code, Linux" />
+          <h2 className="text-3xl font-bold mb-12 text-center">Minhas <span className="text-purple-400">Habilidades</span></h2>
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            {skills.map((skill, index) => (
+              <div key={index} className="group relative flex flex-col items-center justify-center p-6 bg-white/5 border border-white/10 rounded-xl hover:border-purple-500 transition-all duration-300 hover:-translate-y-1">
+                <div className="text-4xl text-gray-400 group-hover:text-purple-400 transition-colors duration-300 mb-2">
+                  {skill.icon}
+                </div>
+                <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors">
+                  {skill.name}
+                </span>
+              </div>
+            ))}
           </div>
+
         </div>
       </section>
 
@@ -116,7 +140,7 @@ function App() {
   );
 }
 
-// Componentes Auxiliares (para não repetir código)
+// Componentes Auxiliares
 function SocialBtn({ icon, link }) {
   return (
     <a href={link} target="_blank" className="p-3 bg-white/5 rounded-lg hover:bg-purple-600 hover:text-white transition">
