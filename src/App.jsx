@@ -78,12 +78,12 @@ function App() {
           </div>
         </div>
 
-        <div className="relative group">
-          <div className="absolute inset-0 bg-purple-600 blur-[80px] opacity-40 rounded-full"></div>
+        <div className="relative">
+          <div className="absolute inset-0 bg-purple-600 rounded-full blur-[80px] opacity-40 animate-pulse"></div>
           <img 
             src="https://github.com/LuisFelipeNM.png" 
             alt="Perfil" 
-            className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover border-2 border-white/10 rotate-3 group-hover:rotate-0 transition duration-500"
+            className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover border-2 border-white/10 rotate-3 hover:rotate-0 transition duration-500 shadow-[0_0_40px_rgba(147,51,234,0.5)]"
           />
         </div>
       </section>
