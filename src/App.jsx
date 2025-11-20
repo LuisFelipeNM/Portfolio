@@ -79,7 +79,6 @@ function App() {
         </div>
 
         <div className="relative">
-          <div className="absolute inset-0 bg-purple-600 rounded-full blur-[80px] opacity-40 animate-pulse"></div>
           <img 
             src="https://github.com/LuisFelipeNM.png" 
             alt="Perfil" 
