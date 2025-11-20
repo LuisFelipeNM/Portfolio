@@ -1,46 +1,47 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code2, Terminal, Cpu } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaGitAlt, FaLinux } from 'react-icons/fa';
-import { SiC, SiArduino, SiGnubash, SiOctave } from 'react-icons/si';
+import { SiC, SiArduino, SiGnubash, SiOctave, SiJavascript, SiTypescript } from 'react-icons/si';
 
 function App() {
   
   const projects = [
     {
       title: "Projeto 1",
-      desc: "Descrição curta do projeto. Ex: Um dashboard feito com React e Sigma.js para visualização de dados.",
-      techs: ["React", "Tailwind", "Node.js"],
+      desc: "Dashboard interativo para visualização de dados parlamentares.",
+      techs: ["React", "Sigma.js", "Node"],
       link: "#"
     },
     {
       title: "Projeto 2",
-      desc: "Outro projeto incrível. Ex: API RESTful construída para um Hackathon.",
-      techs: ["Python", "Flask", "SQL"],
+      desc: "Sistema de análise de viés em mídia usando IA.",
+      techs: ["Python", "API", "AI"],
       link: "#"
     },
     {
-      title: "Projeto 3",
-      desc: "Automação de sistemas usando scripts e controle de hardware.",
-      techs: ["C++", "Arduino", "IoT"],
+      title: "Kernel Panic",
+      desc: "Projeto de Hackathon focado em soluções financeiras (Foodtech).",
+      techs: ["React", "Frontend", "Pitch"],
       link: "#"
     }
   ];
 
   const skills = [
+    { name: "JavaScript", icon: <SiJavascript /> },
+    { name: "TypeScript", icon: <SiTypescript /> },
     { name: "React", icon: <FaReact /> },
     { name: "Node.js", icon: <FaNodeJs /> },
     { name: "Python", icon: <FaPython /> },
-    { name: "C / C++", icon: <SiC /> }, // Ícone do C
+    { name: "C / C++", icon: <SiC /> }, 
     { name: "Arduino", icon: <SiArduino /> },
     { name: "HTML5", icon: <FaHtml5 /> },
     { name: "CSS3", icon: <FaCss3Alt /> },
     { name: "Git", icon: <FaGitAlt /> },
     { name: "Linux", icon: <FaLinux /> },
     { name: "Bash", icon: <SiGnubash /> },
-    // Adicionei Octave pois vi no seu histórico que você usa
     { name: "Octave", icon: <SiOctave /> }, 
   ];
-  
+   
   return (
     <div className="min-h-screen bg-[#0f0715] text-white font-sans selection:bg-purple-500 selection:text-white">
       
@@ -78,11 +79,13 @@ function App() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative group">
+          {/* Brilho no fundo */}
+          <div className="absolute inset-0 bg-purple-600 rounded-2xl blur-2xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
           <img 
             src="https://github.com/LuisFelipeNM.png" 
             alt="Perfil" 
-            className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover border-2 border-white/10 rotate-3 hover:rotate-0 transition duration-500 shadow-[0_0_40px_rgba(147,51,234,0.5)]"
+            className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover rotate-3 hover:rotate-0 transition duration-500 shadow-[inset_0_0_0_4px_rgba(255,255,255,0.1),0_0_40px_rgba(147,51,234,0.5)] [backface-visibility:hidden] [transform:translateZ(0)]"
           />
         </div>
       </section>
@@ -93,7 +96,10 @@ function App() {
           <h2 className="text-3xl font-bold mb-12 text-center">Minhas <span className="text-purple-400">Habilidades</span></h2>
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {skills.map((skill, index) => (
-              <div key={index} className="group relative flex flex-col items-center justify-center p-6 bg-white/5 border border-white/10 rounded-xl hover:border-purple-500 transition-all duration-300 hover:-translate-y-1">
+              <div 
+                key={index} 
+                className="group relative flex flex-col items-center justify-center p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 [backface-visibility:hidden] [transform:translateZ(0)]"
+              >
                 <div className="text-4xl text-gray-400 group-hover:text-purple-400 transition-colors duration-300 mb-2">
                   {skill.icon}
                 </div>
@@ -103,7 +109,6 @@ function App() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -112,8 +117,8 @@ function App() {
         <h2 className="text-3xl font-bold mb-12 text-center">Projetos <span className="text-purple-400">Recentes</span></h2>
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-[#1a1025] rounded-xl p-6 border border-white/5 hover:-translate-y-2 transition duration-300 hover:border-purple-500/50">
-              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+            <div key={index} className="bg-[#1a1025] rounded-xl p-6 border border-white/5 hover:-translate-y-2 transition duration-300 hover:border-purple-500/50 group">
+              <h3 className="text-xl font-bold mb-2 group-hover:text-purple-400 transition">{project.title}</h3>
               <p className="text-gray-400 text-sm mb-4">{project.desc}</p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.techs.map(tech => (
@@ -122,7 +127,7 @@ function App() {
                   </span>
                 ))}
               </div>
-              <a href={project.link} className="flex items-center gap-2 text-sm font-bold text-white hover:text-purple-400">
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-bold text-white hover:text-purple-400">
                 Ver no GitHub <ExternalLink size={16} />
               </a>
             </div>
@@ -142,19 +147,9 @@ function App() {
 // Componentes Auxiliares
 function SocialBtn({ icon, link }) {
   return (
-    <a href={link} target="_blank" className="p-3 bg-white/5 rounded-lg hover:bg-purple-600 hover:text-white transition">
+    <a href={link} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-lg hover:bg-purple-600 hover:text-white transition">
       {icon}
     </a>
-  )
-}
-
-function SkillCard({ icon, title, desc }) {
-  return (
-    <div className="p-6 bg-[#0f0715] border border-white/10 rounded-xl hover:border-purple-500 transition text-center">
-      <div className="text-purple-400 mb-4 flex justify-center">{icon}</div>
-      <h3 className="font-bold mb-2">{title}</h3>
-      <p className="text-gray-400 text-sm">{desc}</p>
-    </div>
   )
 }
 
