@@ -43,7 +43,7 @@ function App() {
       </nav>
 
       {/* --- HERO SECTION --- */}
-      <section id="home" className="pt-40 pb-20 px-6 max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+      <section id="home" className="scroll-mt-28 pt-40 pb-20 px-6 max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
             Olá, eu sou <br />
@@ -52,12 +52,12 @@ function App() {
             </span>
           </h1>
           <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto md:mx-0">
-            Engenheiro de Computação. Transformo problemas complexos em soluções digitais elegantes.
+            Engenheiro de Computação. Desenvolvedor Frontend.
           </p>
           <div className="flex gap-4 justify-center md:justify-start">
             <SocialBtn icon={<Github />} link="https://github.com/LuisFelipeNM" />
-            <SocialBtn icon={<Linkedin />} link="#" />
-            <SocialBtn icon={<Mail />} link="#" />
+            <SocialBtn icon={<Linkedin />} link="https://www.linkedin.com/in/lu%C3%ADs-felipe-nadalini-marafon-299413302/" />
+            <SocialBtn icon={<Mail />} link="mailto:lfnadalinimarafon@gmail.com" />
           </div>
         </div>
 
@@ -72,7 +72,7 @@ function App() {
       </section>
 
       {/* --- SKILLS SECTION --- */}
-      <section id="skills" className="py-20 bg-white/5">
+      <section id="skills" className="scroll-mt-28 py-20 bg-white/5">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12 text-center"><span className="text-purple-400">Minhas</span> Habilidades</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -85,7 +85,7 @@ function App() {
       </section>
 
       {/* --- PROJECTS SECTION --- */}
-      <section id="projects" className="py-20 max-w-6xl mx-auto px-6">
+      <section id="projects" className="scroll-mt-28 py-20 max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold mb-12 text-center">Projetos <span className="text-purple-400">Recentes</span></h2>
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -108,7 +108,7 @@ function App() {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer id="contact" className="py-10 text-center text-gray-500 text-sm border-t border-white/5">
+      <footer id="contact" className="scroll-mt-28 py-10 text-center text-gray-500 text-sm border-t border-white/5">
         <p>© 2025 Luís Felipe Nadalini Marafon. Feito com React & Tailwind.</p>
       </footer>
 
